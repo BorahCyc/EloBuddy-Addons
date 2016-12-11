@@ -4,7 +4,6 @@ using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
 
-
 namespace Amumu
 {
     class Combo

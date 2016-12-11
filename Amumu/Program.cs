@@ -5,9 +5,6 @@ using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
 using EloBuddy.SDK.Enumerations;
 
-
-
-
 namespace Amumu
 {
     class Program
