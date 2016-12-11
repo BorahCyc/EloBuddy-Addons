@@ -1,0 +1,13 @@
+c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\bin\Debug\Amumu.exe.config
+c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\bin\Debug\Amumu.exe
+c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\bin\Debug\Amumu.pdb
+c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\bin\Debug\EloBuddy.dll
+c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\bin\Debug\EloBuddy.SDK.dll
+c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\bin\Debug\SharpDX.Direct3D9.dll
+c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\bin\Debug\SharpDX.dll
+c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\bin\Debug\EloBuddy.Sandbox.dll
+c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\bin\Debug\Newtonsoft.Json.dll
+c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\obj\Debug\Amumu.exe
+c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\obj\Debug\Amumu.pdb
+C:\Users\Admin\Documents\Visual Studio 2012\Projects\Amumu\Amumu\obj\Debug\Amumu.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2012\Projects\Amumu\Amumu\bin\Debug\SharpDX.XInput.dll
