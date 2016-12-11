@@ -16,7 +16,7 @@ namespace Amumu
 
         private static void Loading_OnLoadingComplete(EventArgs args)
         {
-            if (Player.Instance.Hero != Champion.Amumu)
+            if (Player.Instance.Hero != Champion.Amumu) return;
             {
                 Chat.Print("Amumu Loaded!");
             }
@@ -27,7 +27,16 @@ namespace Amumu
 
         private static void OnTick(EventArgs args)
         {
-            
+            if (Player.Instance.IsDead) return;
+
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
+            { Mode.ComboExecute(); } 
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
+            { Mode.LaneClearExecute(); } 
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear))
+            { Mode.JungleClearExecute(); }
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
+            { Mode.FleeExecute(); }
         }
 
     }

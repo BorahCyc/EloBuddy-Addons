@@ -11,3 +11,16 @@ c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\obj\Debug\Amumu
 c:\users\admin\documents\visual studio 2012\Projects\Amumu\Amumu\obj\Debug\Amumu.pdb
 C:\Users\Admin\Documents\Visual Studio 2012\Projects\Amumu\Amumu\obj\Debug\Amumu.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\Visual Studio 2012\Projects\Amumu\Amumu\bin\Debug\SharpDX.XInput.dll
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\bin\Debug\Amumu.exe.config
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\obj\Debug\Amumu.exe
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\obj\Debug\Amumu.pdb
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\bin\Debug\Amumu.exe
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\bin\Debug\Amumu.pdb
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\bin\Debug\EloBuddy.dll
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\bin\Debug\EloBuddy.Sandbox.dll
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\bin\Debug\EloBuddy.SDK.dll
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\bin\Debug\SharpDX.dll
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\bin\Debug\SharpDX.XInput.dll
+C:\Users\Admin\Documents\GitHub\EloBuddy-Addons\Amumu\obj\Debug\Amumu.csprojResolveAssemblyReference.cache

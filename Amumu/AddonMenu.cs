@@ -27,7 +27,7 @@ namespace Amumu
                 ComboMenu.Add("W", new CheckBox("Use W"));
                 ComboMenu.Add("E", new CheckBox("Use E"));
                 ComboMenu.Add("R", new CheckBox("Use R"));
-                ComboMenu.Add("AutoR", new Slider("Use R if {0} Enemies in Range", 0, 2, 5));
+                ComboMenu.Add("AutoR", new Slider("Use R if {0} Enemies in range", 0, 2, 5));
             }
 
             LaneClear = FirstMenu.AddSubMenu("LaneClear");
@@ -44,6 +44,7 @@ namespace Amumu
                 JungleClear.Add("Q", new CheckBox("Use Q"));
                 JungleClear.Add("W", new CheckBox("Use W"));
                 JungleClear.Add("E", new CheckBox("Use E"));
+                JungleClear.Add("ManaMNG", new Slider("If mana percent below {0}% stop", 45, 0, 100));
             }
 
             KillSteal = FirstMenu.AddSubMenu("KillSteal");
