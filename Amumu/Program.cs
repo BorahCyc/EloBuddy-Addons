@@ -7,7 +7,7 @@ using EloBuddy.SDK.Enumerations;
 
 namespace Amumu
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {

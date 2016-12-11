@@ -5,7 +5,7 @@ using EloBuddy.SDK.Menu.Values;
 
 namespace Amumu
 {
-    class AddonMenu
+    internal class AddonMenu
     {
         public static Menu FirstMenu;
         public static Menu ComboMenu;
