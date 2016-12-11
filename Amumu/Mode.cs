@@ -3,8 +3,6 @@ using EloBuddy;
 using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
-using static Amumu.Program;
-using static Amumu.AddonMenu;
 
 namespace Amumu
 {
