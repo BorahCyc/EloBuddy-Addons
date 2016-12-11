@@ -33,10 +33,10 @@ namespace Amumu
             { Mode.ComboExecute(); } 
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
             { Mode.LaneClearExecute(); } 
-            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear))
-            { Mode.JungleClearExecute(); }
-            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
-            { Mode.FleeExecute(); }
+            //if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear))
+            //{ Mode.JungleClearExecute(); }
+            //if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
+            //{ Mode.FleeExecute(); }
         }
 
     }

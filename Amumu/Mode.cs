@@ -10,7 +10,7 @@ namespace Amumu
     {
         public static void ComboExecute()
         {
-            if (AddonMenu.ComboMenu["useQ"].Cast<CheckBox>().CurrentValue && Spells.Q.IsReady())
+            if (AddonMenu.ComboMenu["Qcb"].Cast<CheckBox>().CurrentValue && Spells.Q.IsReady())
             {
                 var target = TargetSelector.GetTarget(Spells.Q.Range, DamageType.Magical);
                 if (target != null && target.IsValidTarget())
@@ -26,9 +26,9 @@ namespace Amumu
 
         public static void LaneClearExecute()
         {
-            if (AddonMenu.LaneClear["ManaMNG"].Cast<Slider>().CurrentValue <= Player.Instance.ManaPercent)
+            if (AddonMenu.LaneClear["ManaMNGlc"].Cast<Slider>().CurrentValue <= Player.Instance.ManaPercent)
             {
-                if (AddonMenu.LaneClear["useWLC"].Cast<CheckBox>().CurrentValue && Spells.W.IsReady())
+                if (AddonMenu.LaneClear["Wlc"].Cast<CheckBox>().CurrentValue && Spells.W.IsReady())
                 {
                     int count = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.W.Range, false).Count();
 
@@ -37,7 +37,7 @@ namespace Amumu
                         Spells.W.Cast();
                     }
                 }
-                if (AddonMenu.LaneClear["useELC"].Cast<CheckBox>().CurrentValue && Spells.E.IsReady())
+                if (AddonMenu.LaneClear["Elc"].Cast<CheckBox>().CurrentValue && Spells.E.IsReady())
                 {
                     int count = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.E.Range, false).Count();
 
@@ -52,9 +52,9 @@ namespace Amumu
 
         public static void JungleClearExecute()
         {
-            if (AddonMenu.JungleClear["ManaMNG"].Cast<Slider>().CurrentValue <= Player.Instance.ManaPercent)
+            if (AddonMenu.JungleClear["ManaMNGjc"].Cast<Slider>().CurrentValue <= Player.Instance.ManaPercent)
             {
-                if (AddonMenu.JungleClear["useWJC"].Cast<CheckBox>().CurrentValue && Spells.W.IsReady())
+                if (AddonMenu.JungleClear["Wjc"].Cast<CheckBox>().CurrentValue && Spells.W.IsReady())
                 {
                     int count = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.W.Range, false).Count();
 
@@ -63,7 +63,7 @@ namespace Amumu
                         Spells.W.Cast();
                     }
                 }
-                if (AddonMenu.JungleClear["useEJC"].Cast<CheckBox>().CurrentValue && Spells.E.IsReady())
+                if (AddonMenu.JungleClear["Ejc"].Cast<CheckBox>().CurrentValue && Spells.E.IsReady())
                 {
                     int count = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.E.Range, false).Count();
 

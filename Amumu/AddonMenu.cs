@@ -17,51 +17,52 @@ namespace Amumu
         public static void CreateMenu()
         {
             FirstMenu = MainMenu.AddMenu("Amumu", "Amumu");
-            FirstMenu.AddGroupLabel("Made by Trí Đẹp Trai");
-            FirstMenu.AddLabel("NAME");
+            FirstMenu.AddGroupLabel("Made by Borah Cyc!");
+            FirstMenu.AddLabel("Test & Give me you feedback!");
 
             ComboMenu = FirstMenu.AddSubMenu("Combo");
             {
                 ComboMenu.AddGroupLabel("Combo Settings");
-                ComboMenu.Add("Q", new CheckBox("Use Q"));
-                ComboMenu.Add("W", new CheckBox("Use W"));
-                ComboMenu.Add("E", new CheckBox("Use E"));
-                ComboMenu.Add("R", new CheckBox("Use R"));
+                ComboMenu.Add("Qcb", new CheckBox("Use Q"));
+                ComboMenu.Add("Wcb", new CheckBox("Use W"));
+                ComboMenu.Add("Ecb", new CheckBox("Use E"));
+                ComboMenu.Add("Rcb", new CheckBox("Use R"));
                 ComboMenu.Add("AutoR", new Slider("Use R if {0} Enemies in range", 0, 2, 5));
             }
 
             LaneClear = FirstMenu.AddSubMenu("LaneClear");
             {
                 LaneClear.AddGroupLabel("LaneClear Settings");
-                LaneClear.Add("Q", new CheckBox("Use Q"));
-                LaneClear.Add("W", new CheckBox("Use W"));
-                LaneClear.Add("E", new CheckBox("Use E"));
+                LaneClear.Add("Qlc", new CheckBox("Use Q"));
+                LaneClear.Add("Wlc", new CheckBox("Use W"));
+                LaneClear.Add("Elc", new CheckBox("Use E"));
+                LaneClear.Add("ManaMNGlc", new Slider("If mana percent below {0}% stop", 45, 0, 100));
             }
 
             JungleClear = FirstMenu.AddSubMenu("JungleClear");
             {
                 JungleClear.AddGroupLabel("JungleClear Settings");
-                JungleClear.Add("Q", new CheckBox("Use Q"));
-                JungleClear.Add("W", new CheckBox("Use W"));
-                JungleClear.Add("E", new CheckBox("Use E"));
-                JungleClear.Add("ManaMNG", new Slider("If mana percent below {0}% stop", 45, 0, 100));
+                JungleClear.Add("Qjc", new CheckBox("Use Q"));
+                JungleClear.Add("Wjc", new CheckBox("Use W"));
+                JungleClear.Add("Ejc", new CheckBox("Use E"));
+                JungleClear.Add("ManaMNGjc", new Slider("If mana percent below {0}% stop", 45, 0, 100));
             }
 
             KillSteal = FirstMenu.AddSubMenu("KillSteal");
             {
                 KillSteal.AddGroupLabel("KillSteal Settings");
-                KillSteal.Add("Q", new CheckBox("Use Q"));
-                KillSteal.Add("W", new CheckBox("Use E"));
-                KillSteal.Add("R", new CheckBox("Use R"));
+                KillSteal.Add("Qks", new CheckBox("Use Q"));
+                KillSteal.Add("Wks", new CheckBox("Use E"));
+                KillSteal.Add("Rks", new CheckBox("Use R"));
             }
 
             DrawMenu = FirstMenu.AddSubMenu("Drawings");
             {
                 DrawMenu.AddGroupLabel("Draw Settings");
-                DrawMenu.Add("Q", new CheckBox("Draw Q"));
-                DrawMenu.Add("W", new CheckBox("Draw W"));
-                DrawMenu.Add("E", new CheckBox("Draw E"));
-                DrawMenu.Add("R", new CheckBox("Draw R"));
+                DrawMenu.Add("Qdr", new CheckBox("Draw Q"));
+                DrawMenu.Add("Wdr", new CheckBox("Draw W"));
+                DrawMenu.Add("Edr", new CheckBox("Draw E"));
+                DrawMenu.Add("Rdr", new CheckBox("Draw R"));
             }
         }
 
