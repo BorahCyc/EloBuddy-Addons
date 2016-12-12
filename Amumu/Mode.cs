@@ -6,7 +6,7 @@ using EloBuddy.SDK.Menu.Values;
 
 namespace Amumu
 {
-    internal class Mode
+    class Mode
     {
         public static void ComboExecute()
         {
@@ -22,6 +22,31 @@ namespace Amumu
                     }                  
                 }
             }
+
+            if (AddonMenu.ComboMenu["Wcb"].Cast<CheckBox>().CurrentValue && Spells.W.IsReady())
+            {
+                var target = TargetSelector.GetTarget(Spells.W.Range, DamageType.Magical);
+                if (target != null && target.IsValidTarget())
+                {
+                    Spells.W.Cast();
+                }
+                else
+                {
+                    if (Spells.W.ToggleState.Equals(2))
+                    {
+                        Spells.W.Cast();
+                    }
+                }
+            }
+
+            if (AddonMenu.ComboMenu["Ecb"].Cast<CheckBox>().CurrentValue && Spells.E.IsReady())
+            {
+                var target = TargetSelector.GetTarget(Spells.E.Range, DamageType.Magical);
+                if (target != null && target.IsValidTarget())
+                {
+                    Spells.E.Cast();
+                }
+            }         
         }
 
         public static void LaneClearExecute()

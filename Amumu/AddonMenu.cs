@@ -5,7 +5,7 @@ using EloBuddy.SDK.Menu.Values;
 
 namespace Amumu
 {
-    internal class AddonMenu
+    class AddonMenu
     {
         public static Menu FirstMenu;
         public static Menu ComboMenu;
@@ -18,7 +18,7 @@ namespace Amumu
         {
             FirstMenu = MainMenu.AddMenu("Amumu", "Amumu");
             FirstMenu.AddGroupLabel("Made by Borah Cyc!");
-            FirstMenu.AddLabel("Test & Give me you feedback!");
+            FirstMenu.AddLabel("Test & Give me your feedback!");
 
             ComboMenu = FirstMenu.AddSubMenu("Combo");
             {

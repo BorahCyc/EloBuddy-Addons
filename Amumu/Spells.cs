@@ -4,7 +4,7 @@ using EloBuddy.SDK.Enumerations;
 
 namespace Amumu
 {
-    internal class Spells
+    class Spells
     {
         public static Spell.Skillshot Q;
         public static Spell.Active W;
@@ -13,7 +13,7 @@ namespace Amumu
 
         public static void LoadSpells()
         {
-            Q = new Spell.Skillshot(SpellSlot.Q, 1100, SkillShotType.Linear);
+            Q = new Spell.Skillshot(SpellSlot.Q, DamageType.Magical);
             W = new Spell.Active(SpellSlot.W, 300, DamageType.Magical);
             E = new Spell.Active(SpellSlot.E, 350, DamageType.Magical);
             R = new Spell.Active(SpellSlot.R, 550, DamageType.Magical);            
