@@ -54,7 +54,7 @@ namespace Amumu
             {
                 var enemies = EntityManager.Heroes.Enemies.FirstOrDefault(x => x.IsValidTarget(Spells.R.Range) && x.IsValid);
                 if (enemies.IsValidTarget(Spells.R.Range) && Spells.R.IsReady()
-                    && Player.Instance.CountEnemiesInRange(550) == AddonMenu.ComboMenu["RcbENM"].Cast<Slider>().CurrentValue)
+                    && Player.Instance.CountEnemiesInRange(550) >= AddonMenu.ComboMenu["RcbENM"].Cast<Slider>().CurrentValue)
                 {
                     Spells.R.Cast();
                 }
