@@ -27,7 +27,7 @@ namespace Amumu
                 ComboMenu.Add("Wcb", new CheckBox("Use W"));
                 ComboMenu.Add("Ecb", new CheckBox("Use E"));
                 ComboMenu.Add("Rcb", new CheckBox("Use R"));
-                ComboMenu.Add("AutoR", new Slider("Use R if {0} Enemies in range", 0, 2, 5));
+                ComboMenu.Add("RcbENM", new Slider("Use R if {0} Enemies in range", 0, 2, 5));
             }
 
             LaneClear = FirstMenu.AddSubMenu("LaneClear");

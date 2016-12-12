@@ -28,7 +28,10 @@ namespace Amumu
                 var target = TargetSelector.GetTarget(Spells.W.Range, DamageType.Magical);
                 if (target != null && target.IsValidTarget())
                 {
-                    Spells.W.Cast();
+                    if (Spells.W.ToggleState.Equals(1))
+                    {
+                        Spells.W.Cast();
+                    }
                 }
                 else
                 {
@@ -46,7 +49,16 @@ namespace Amumu
                 {
                     Spells.E.Cast();
                 }
-            }         
+            }
+            if (AddonMenu.ComboMenu["Rcb"].Cast<CheckBox>().CurrentValue && Spells.R.IsReady())
+            {
+                var enemies = EntityManager.Heroes.Enemies.FirstOrDefault(x => x.IsValidTarget(Spells.R.Range) && x.IsValid);
+                if (enemies.IsValidTarget(Spells.R.Range) && Spells.R.IsReady()
+                    && Player.Instance.CountEnemiesInRange(550) == AddonMenu.ComboMenu["RcbENM"].Cast<Slider>().CurrentValue)
+                {
+                    Spells.R.Cast();
+                }
+            }
         }
 
         public static void LaneClearExecute()
@@ -55,18 +67,26 @@ namespace Amumu
             {
                 if (AddonMenu.LaneClear["Wlc"].Cast<CheckBox>().CurrentValue && Spells.W.IsReady())
                 {
-                    int count = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.W.Range, false).Count();
-
-                    if (count >= 3)
+                    var lanemobs = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.Position, Spells.W.Range);
+                    if (lanemobs != null)
                     {
-                        Spells.W.Cast();
+                        if (Spells.W.ToggleState.Equals(1))
+                        {
+                            Spells.W.Cast();
+                        }
+                    }
+                    else
+                    {
+                        if (Spells.W.ToggleState.Equals(2))
+                        {
+                            Spells.W.Cast();
+                        }
                     }
                 }
                 if (AddonMenu.LaneClear["Elc"].Cast<CheckBox>().CurrentValue && Spells.E.IsReady())
                 {
-                    int count = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.E.Range, false).Count();
-
-                    if (count >= 3)
+                    var lanemobs = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.Position, Spells.E.Range);
+                    if (lanemobs != null)
                     {
                         Spells.E.Cast();
                     }
@@ -79,20 +99,38 @@ namespace Amumu
         {
             if (AddonMenu.JungleClear["ManaMNGjc"].Cast<Slider>().CurrentValue <= Player.Instance.ManaPercent)
             {
+                if (AddonMenu.JungleClear["Qjc"].Cast<CheckBox>().CurrentValue && Spells.Q.IsReady())
+                {
+                    var junglemobs = EntityManager.MinionsAndMonsters.GetJungleMonsters();
+                    if (junglemobs != null)
+                    {
+                        Spells.Q.Cast();
+                    }
+                   
+                }
+
                 if (AddonMenu.JungleClear["Wjc"].Cast<CheckBox>().CurrentValue && Spells.W.IsReady())
                 {
-                    int count = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.W.Range, false).Count();
-
-                    if (count >= 3)
+                    var junglemobs = EntityManager.MinionsAndMonsters.GetJungleMonsters(Player.Instance.Position, Spells.W.Range);
+                    if (junglemobs != null)
                     {
-                        Spells.W.Cast();
+                        if (Spells.W.ToggleState.Equals(1))
+                        {
+                            Spells.W.Cast();
+                        }
+                    }
+                    else
+                    {
+                        if (Spells.W.ToggleState.Equals(2))
+                        {
+                            Spells.W.Cast();
+                        }
                     }
                 }
                 if (AddonMenu.JungleClear["Ejc"].Cast<CheckBox>().CurrentValue && Spells.E.IsReady())
                 {
-                    int count = EntityManager.MinionsAndMonsters.GetLaneMinions(EntityManager.UnitTeam.Enemy, Player.Instance.ServerPosition, Spells.E.Range, false).Count();
-
-                    if (count >= 3)
+                    var junglemobs = EntityManager.MinionsAndMonsters.GetJungleMonsters(Player.Instance.Position, Spells.E.Range);
+                    if (junglemobs != null)
                     {
                         Spells.E.Cast();
                     }
