@@ -52,9 +52,8 @@ namespace Amumu
             }
             if (AddonMenu.ComboMenu["Rcb"].Cast<CheckBox>().CurrentValue && Spells.R.IsReady())
             {
-                var enemies = EntityManager.Heroes.Enemies.FirstOrDefault(x => x.IsValidTarget(Spells.R.Range) && x.IsValid);
-                if (enemies.IsValidTarget(Spells.R.Range) && Spells.R.IsReady()
-                    && Player.Instance.CountEnemiesInRange(550) >= AddonMenu.ComboMenu["RcbENM"].Cast<Slider>().CurrentValue)
+                var Count = EntityManager.Heroes.Enemies.Count(x => x.IsValid && Spells.R.IsInRange(x));
+                if (Count >= AddonMenu.ComboMenu["RcbENM"].Cast<Slider>().CurrentValue)
                 {
                     Spells.R.Cast();
                 }

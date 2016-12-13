@@ -4,6 +4,8 @@ using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
 using EloBuddy.SDK.Enumerations;
+using EloBuddy.SDK.Rendering;
+using SharpDX;
 
 namespace Amumu
 {
@@ -20,7 +22,8 @@ namespace Amumu
             try
             {
                 Game.OnTick += OnTick;
-                AddonMenu.CreateMenu();
+                //Drawing.OnDraw += OnDraw;
+                AddonMenu.DesignMenu();
                 Spells.LoadSpells();
                 Chat.Print("Amumu Loaded!");
             }
@@ -38,11 +41,33 @@ namespace Amumu
             { Mode.ComboExecute(); } 
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
             { Mode.LaneClearExecute(); } 
-            //if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear))
-            //{ Mode.JungleClearExecute(); }
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear))
+            { Mode.JungleClearExecute(); }
             //if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
             //{ Mode.FleeExecute(); }
         }
 
+        private static void OnDraw(EventArgs args)
+        {
+            if (AddonMenu.DrawMenu["enadr"].Cast<CheckBox>().CurrentValue)
+            {
+                if (AddonMenu.DrawMenu["Qdr"].Cast<CheckBox>().CurrentValue)
+                {
+                    Circle.Draw(Spells.Q.IsLearned ? Color.HotPink : Color.Zero, Spells.Q.Range, Player.Instance.Position);
+                }
+                if (AddonMenu.DrawMenu["Wdr"].Cast<CheckBox>().CurrentValue)
+                {
+                    Circle.Draw(Spells.W.IsLearned ? Color.Cyan : Color.Zero, Spells.W.Range, Player.Instance.Position);
+                }
+                if (AddonMenu.DrawMenu["Edr"].Cast<CheckBox>().CurrentValue)
+                {
+                    Circle.Draw(Spells.W.IsLearned ? Color.Cyan : Color.Zero, Spells.E.Range, Player.Instance.Position);
+                }
+                if (AddonMenu.DrawMenu["Rdr"].Cast<CheckBox>().CurrentValue)
+                {
+                    Circle.Draw(Spells.R.IsLearned ? Color.Yellow : Color.Zero, Spells.R.Range, Player.Instance.Position);
+                }
+            }
+        }
     }
 }

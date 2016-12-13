@@ -14,7 +14,7 @@ namespace Amumu
         public static Menu KillSteal;
         public static Menu DrawMenu;
 
-        public static void CreateMenu()
+        public static void DesignMenu()
         {
             FirstMenu = MainMenu.AddMenu("Amumu", "Amumu");
             FirstMenu.AddGroupLabel("Made by Borah Cyc!");
@@ -59,6 +59,7 @@ namespace Amumu
             DrawMenu = FirstMenu.AddSubMenu("Drawings");
             {
                 DrawMenu.AddGroupLabel("Draw Settings");
+                DrawMenu.Add("enadr", new CheckBox("Enable Drawings"));
                 DrawMenu.Add("Qdr", new CheckBox("Draw Q"));
                 DrawMenu.Add("Wdr", new CheckBox("Draw W"));
                 DrawMenu.Add("Edr", new CheckBox("Draw E"));
