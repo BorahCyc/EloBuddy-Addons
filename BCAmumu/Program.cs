@@ -7,7 +7,7 @@ using EloBuddy.SDK.Enumerations;
 using EloBuddy.SDK.Rendering;
 using SharpDX;
 
-namespace Amumu
+namespace BCAmumu
 {
     class Program
     {

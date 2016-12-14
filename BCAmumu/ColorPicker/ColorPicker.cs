@@ -8,7 +8,7 @@ using SharpDX.Direct3D9;
 using Color = System.Drawing.Color;
 using Line = EloBuddy.SDK.Rendering.Line;
 
-namespace Amumu
+namespace BCAmumu
 {
     public sealed class ColorPicker : ValueBase<Color>
     {

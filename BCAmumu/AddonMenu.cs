@@ -1,9 +1,10 @@
-﻿using EloBuddy.SDK;
+﻿using System.Drawing;
+using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Menu.Values;
 
-namespace Amumu
+namespace BCAmumu
 {
     class AddonMenu
     {
@@ -24,10 +25,10 @@ namespace Amumu
             {
                 ComboMenu.AddGroupLabel("Combo Settings");
                 ComboMenu.Add("Qcb", new CheckBox("Use Q"));
-                ComboMenu.Add("Wcb", new CheckBox("Use W"));
+                ComboMenu.Add("Wcb", new ComboBox("W style", 2, "Don't use W", "W Normal", "W Spam =)))"));
                 ComboMenu.Add("Ecb", new CheckBox("Use E"));
                 ComboMenu.Add("Rcb", new CheckBox("Use R"));
-                ComboMenu.Add("RcbENM", new Slider("Use R if {0} Enemies in range", 0, 2, 5));
+                ComboMenu.Add("RcbENM", new Slider("Use R if {0} enemies in range", 0, 2, 5));
             }
 
             LaneClear = FirstMenu.AddSubMenu("LaneClear");
@@ -64,6 +65,8 @@ namespace Amumu
                 DrawMenu.Add("Wdr", new CheckBox("Draw W"));
                 DrawMenu.Add("Edr", new CheckBox("Draw E"));
                 DrawMenu.Add("Rdr", new CheckBox("Draw R"));
+                DrawMenu.Add("coldr", new CheckBox("Draw Damage Indicator"));
+                DrawMenu.Add("Color", new ColorPicker("Damage Indicator Color", Color.FromArgb(255, 255, 236, 0)));
             }
         }
 

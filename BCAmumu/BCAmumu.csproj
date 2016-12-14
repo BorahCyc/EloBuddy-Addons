@@ -7,8 +7,8 @@
     <ProjectGuid>{7771CECE-270E-4040-9A48-71263789489C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Amumu</RootNamespace>
-    <AssemblyName>Amumu</AssemblyName>
+    <RootNamespace>BCAmumu</RootNamespace>
+    <AssemblyName>BCAmumu</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EloBuddy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7339047cb10f6e86, processorArchitecture=x86">
@@ -70,6 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColorPicker\ColorPicker.cs" />
+    <Compile Include="DamageIndicator.cs" />
+    <Compile Include="Extension.cs" />
     <Compile Include="Mode.cs" />
     <Compile Include="AddonMenu.cs" />
     <Compile Include="Program.cs" />

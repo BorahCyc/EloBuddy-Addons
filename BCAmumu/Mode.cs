@@ -4,7 +4,7 @@ using EloBuddy.SDK;
 using EloBuddy.SDK.Events;
 using EloBuddy.SDK.Menu.Values;
 
-namespace Amumu
+namespace BCAmumu
 {
     class Mode
     {
@@ -19,43 +19,63 @@ namespace Amumu
                     if (Qpred.HitChancePercent >= 80)
                     {
                         Spells.Q.Cast(Qpred.CastPosition);
-                    }                  
-                }
-            }
-
-            if (AddonMenu.ComboMenu["Wcb"].Cast<CheckBox>().CurrentValue && Spells.W.IsReady())
-            {
-                var target = TargetSelector.GetTarget(Spells.W.Range, DamageType.Magical);
-                if (target != null && target.IsValidTarget())
-                {
-                    if (Spells.W.ToggleState.Equals(1))
-                    {
-                        Spells.W.Cast();
-                    }
-                }
-                else
-                {
-                    if (Spells.W.ToggleState.Equals(2))
-                    {
-                        Spells.W.Cast();
                     }
                 }
             }
 
-            if (AddonMenu.ComboMenu["Ecb"].Cast<CheckBox>().CurrentValue && Spells.E.IsReady())
+            var Target = TargetSelector.GetTarget(Spells.W.Range, DamageType.Magical);
+            if (Target == null) return;
+            if (AddonMenu.ComboMenu.GetValue("Wcb", false) > 0 && Spells.Q.IsReady())
             {
-                var target = TargetSelector.GetTarget(Spells.E.Range, DamageType.Magical);
-                if (target != null && target.IsValidTarget())
+                if (AddonMenu.ComboMenu.GetValue("Wcb", false) == 1)
                 {
-                    Spells.E.Cast();
+                    var target = TargetSelector.GetTarget(Spells.W.Range, DamageType.Magical);
+                    if (target != null && target.IsValidTarget())
+                    {
+                        if (Spells.W.ToggleState.Equals(1))
+                        {
+                            Spells.W.Cast();
+                        }
+                    }
+                    else
+                    {
+                        if (Spells.W.ToggleState.Equals(2))
+                        {
+                            Spells.W.Cast();
+                        }
+                    }
                 }
-            }
-            if (AddonMenu.ComboMenu["Rcb"].Cast<CheckBox>().CurrentValue && Spells.R.IsReady())
-            {
-                var Count = EntityManager.Heroes.Enemies.Count(x => x.IsValid && Spells.R.IsInRange(x));
-                if (Count >= AddonMenu.ComboMenu["RcbENM"].Cast<Slider>().CurrentValue)
+                if (AddonMenu.ComboMenu.GetValue("Q", false) == 2)
                 {
-                    Spells.R.Cast();
+                    var target = TargetSelector.GetTarget(Spells.W.Range, DamageType.Magical);
+                    if (target != null && target.IsValidTarget())
+                    {
+                        Spells.W.Cast();
+                    }
+                    else
+                    {
+                        if (Spells.W.ToggleState.Equals(2))
+                        {
+                            Spells.W.Cast();
+                        }
+                    }
+                }
+
+                if (AddonMenu.ComboMenu["Ecb"].Cast<CheckBox>().CurrentValue && Spells.E.IsReady())
+                {
+                    var target = TargetSelector.GetTarget(Spells.E.Range, DamageType.Magical);
+                    if (target != null && target.IsValidTarget())
+                    {
+                        Spells.E.Cast();
+                    }
+                }
+                if (AddonMenu.ComboMenu["Rcb"].Cast<CheckBox>().CurrentValue && Spells.R.IsReady())
+                {
+                    var Count = EntityManager.Heroes.Enemies.Count(x => x.IsValid && Spells.R.IsInRange(x));
+                    if (Count >= AddonMenu.ComboMenu["RcbENM"].Cast<Slider>().CurrentValue)
+                    {
+                        Spells.R.Cast();
+                    }
                 }
             }
         }

@@ -2,7 +2,7 @@
 using EloBuddy.SDK;
 using EloBuddy.SDK.Enumerations;
 
-namespace Amumu
+namespace BCAmumu
 {
     class Spells
     {
