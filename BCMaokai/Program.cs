@@ -22,11 +22,17 @@ namespace BCMaokai
             Chat.Print("BCMaokai Loaded!");
 
             Game.OnTick += Ontick;
+            Game.OnUpdate += OnUpdate;
             AddonMenu.DesignMenu();
             Spells.LoadSpells();
             Drawing.OnDraw += OnDraw;
             Drawing.OnEndScene += DamageIndicator.Damage_Indicator;
             Gapcloser.OnGapcloser += Modes.Gapcloser_OnGapcloser;
+        }
+
+        private static void OnUpdate(EventArgs args)
+        {
+            Modes.DoKillSteal();
         }
 
         private static void Ontick(EventArgs args)
@@ -36,8 +42,7 @@ namespace BCMaokai
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.LaneClear))
             { Modes.DoLaneClear(); }
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.JungleClear))
-            { Modes.DoJungleClear(); }
-            Modes.DoKillSteal();
+            { Modes.DoJungleClear(); }            
         }
 
         private static void OnDraw(EventArgs args)
